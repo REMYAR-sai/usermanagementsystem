@@ -46,7 +46,7 @@ public function approve($id)
 }
 public function reject($id)
 {
-	$this->db->set('is_email_verified','0');
+	$this->db->set('is_email_verified','2');
 	$qry=$this->db->where("id",$id);
 	$qry=$this->db->update("register");
 	return $qry;
@@ -57,27 +57,15 @@ public function reject($id)
 // 		$qry=$this->db->get("register");
 // 		return $qry;
 // 	 }
-// public function deletedetails($id)
-// 	 {
-// 	 	$this->db->set('is_email_verified','2');
-// 		$qry=$this->db->where("id",$id);
-// 		$qry=$this->db->delete("register");
-// 		return $qry;
-// 	}
-function fetch_user()
+
+
+  
+  function deletesdetails($id)
 {
-    $this->db->select('*');
-    $this->db->from('register');
-    $query=$this->db->get();
-    return $query->result();
-}
-function delete_data($id)
-{
-    $this->db->where("id",$id);
-    $this->db->delete("register");
-    return;//onsuccess
-}
-   
+$this->db->set('is_email_verified','0');
+$this->db->where("id",$id);
+$this->db->delete("register");
+} 
 
 }
 ?>
