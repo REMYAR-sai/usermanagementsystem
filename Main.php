@@ -77,7 +77,7 @@ function approvedetails()
 		$this->Mainmodel->approve($id);
 		redirect('main/approvedetails','refresh');
 	}
-function reject()
+function rejectit()
 	{
 		$this->load->model('Mainmodel');
 		$id=$this->uri->segment(3);
@@ -99,23 +99,30 @@ function reject()
 // 		$data['n']=$this->Mainmodel->new();
 // 		$this->load->view('delete',$data);
 // 	}
-function fetch_user()
+function delete()
 {
-    $this->db->select('*');
-    $this->db->from('register');
-    $query=$this->db->get();
-    return $query->result();
+   $this->load->model('Mainmodel');
+   $id=$this->uri->segment(3);
+   $this->Mainmodel->deletesdetails($id);
+   redirect('main/approvedetails','refresh');
 }
+public function reject()
+  {
+    $this->load->model('Mainmodel');
+    $id=$this->uri->segment(3);
+    $this->Mainmodel->reject($id);
+    redirect('main/approvedetails','refresh');
+  }
 
-function delete_data()
-    {
-        $id=$this->uri->segment(3);
-        $this->Main_model->delete_data($id);
-        redirect(base_url()."deleted");
-    }
-function deleted()
-    {
-        $this->index();
-    }
+// function delete_data()
+//     {
+//         $id=$this->uri->segment(3);
+//         $this->Main_model->delete_data($id);
+//         redirect(base_url()."deleted");
+//     }
+// function deleted()
+//     {
+//         $this->index();
+//     }
 
 }
