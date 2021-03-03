@@ -23,7 +23,7 @@
       <a class="navbar-brand" href="<?php echo base_url()?>Main/approvedetails">Approve user details</a> 
        
       <a class="navbar-brand" href="<?php echo base_url()?>Register/verify_mail"> Reset password</a>
-      <a class="navbar-brand" href="<?php echo base_url()?>Main/delete_data">Delete User </a>      
+      <a class="navbar-brand" href="<?php echo base_url()?>Main/delete">Delete User </a>      
       <a class="navbar-brand " href="<?php echo base_url()?>Main/logout"> Logout</a>      
       </div>
     </nav>

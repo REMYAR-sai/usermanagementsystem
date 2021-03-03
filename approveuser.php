@@ -20,7 +20,7 @@
 							<th>ADDRESS</th>
 							<th>DISTRICT</th>
 							<th>PINCODE</th>
-							<th colspan="2">status</th>
+							<th colspan="3">status</th>
 						</tr>
 							
 							<?php
@@ -45,11 +45,18 @@
 									?>
 									<td>Approved<td>
 									
-									<a href="<?php echo base_url()?>main/reject/<?php echo $row->id;?>">reject</a></td>
+									<a href="<?php echo base_url()?>main/rejectit/<?php echo $row->id;?>">reject</a></td>
 									<?php
 
 								}
 								elseif($row->is_email_verified==0)
+								{
+									?>
+										
+									<td><a href="<?php echo base_url()?>main/delete/<?php echo $row->id;?>">delete</a></td>
+									<?php
+								}
+								elseif($row->is_email_verified==2)
 								{
 									?>
 									<td>Rejected</td>
@@ -57,10 +64,14 @@
 									<td><a href="<?php echo base_url()?>main/approve/<?php echo $row->id;?>">approve</a></td>
 									<?php
 								}
+								
 								else
 								{
 									?>
 									<td><a href="<?php echo base_url()?>main/approve/<?php echo $row->id;?>">approve</a></td>
+									
+									<td><a href="<?php echo base_url()?>main/delete/<?php echo $row->id;?>">delete</a></td>
+
 									<td><a href="<?php echo base_url()?>main/reject/<?php echo $row->id;?>">reject</a></td>
 									<?php
 								}
@@ -73,5 +84,6 @@
 						?>		
 							
 				</form>
+				<a class="navbar-brand" href="<?php echo base_url()?>Main/index">home</a>
 			</body>
 </html>

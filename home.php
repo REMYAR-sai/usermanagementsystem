@@ -21,6 +21,9 @@
       <a class="dropdown-item" href="<?php echo base_url()?>Main/admin">Admin</a>
       <a class="dropdown-item" href="<?php echo base_url()?>Login/index">User</a>
     </div>
+     
+      <a class="" href="<?php echo base_url()?>Register/index">Register</a>
+    
   </div>
 </div>
 
